@@ -1,0 +1,5 @@
+---
+- hosts: nfs-ganesha-ceph
+  roles:
+    - role: nfs_ganesha_ceph
+      when: enable_nfs_ganesha_ceph | bool

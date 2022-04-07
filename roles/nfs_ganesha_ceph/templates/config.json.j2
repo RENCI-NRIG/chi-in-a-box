@@ -2,13 +2,13 @@
     "command": "/usr/bin/ganesha.nfsd -F -f /etc/ganesha/ganesha.conf",
     "config_files": [
         {
-            "source": "{{ nfs_ganesha_config_dir }}/ganesha.conf",
+            "source": "{{ nfs_ganesha_ceph_config_dir }}/ganesha.conf",
             "dest": "/etc/ganesha/ganesha.conf",
             "owner": "ceph",
             "perm": "0600"
         },
         {
-            "source": "{{ nfs_ganesha_config_dir }}/ceph.conf",
+            "source": "{{ nfs_ganesha_ceph_config_dir }}/ceph.conf",
             "dest": "/etc/ceph/ceph.conf",
             "owner": "ceph",
             "perm": "0600"

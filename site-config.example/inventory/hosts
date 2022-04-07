@@ -859,5 +859,5 @@ doni
 [osg:children]
 control
 
-[nfs-ganesha:children]
+[nfs-ganesha-ceph:children]
 manila
