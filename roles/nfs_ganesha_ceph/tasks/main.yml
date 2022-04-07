@@ -21,16 +21,14 @@
   become: yes
   
 - name: Copying over ceph.conf for nfs-ganesha-ceph
-  merge_configs:
-    sources:
-      - "{{ node_custom_config }}/nfs-ganesha-ceph/ceph.conf"
-      - "{{ node_custom_config }}/ceph.conf"
+  template:
+    src: "{{ node_custom_config }}/nfs-ganesha-ceph/ceph.conf"
     dest: "{{ nfs_ganesha_ceph_config_dir }}/ceph.conf"
     mode: "0660"
-  become: true
+  become: yes
   
 - name: Starting nfs-ganesha-ceph container
-  become: true
+  become: yes
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
