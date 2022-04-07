@@ -28,6 +28,6 @@
     image: "{{ kolla_nfs_ganesha_ceph_image_full }}"
     name: "nfs_ganesha_ceph"
     volumes:
-      - "{{ nfs_ganesha_ceph_config_dir }}:{{ nfs_ganesha_ceph_config_dir }}/:ro"
+      - "{{ nfs_ganesha_ceph_config_dir }}:{{ container_config_directory }}/:ro"
       - "/etc/localtime:/etc/localtime:ro"
       - "kolla_logs:/var/log/kolla/"
