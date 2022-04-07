@@ -20,6 +20,13 @@
     mode: "0600"
   become: yes
   
+- name: Ensuring ceph.conf exist
+  file:
+    path: "{{ nfs_ganesha_ceph_config_dir }}/ceph.conf"
+    state: file
+    mode: "0600"
+  become: yes
+  
 - name: Starting nfs-ganesha-ceph container
   become: true
   kolla_docker:
