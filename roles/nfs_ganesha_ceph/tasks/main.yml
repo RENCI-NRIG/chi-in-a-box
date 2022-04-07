@@ -20,12 +20,14 @@
     mode: "0600"
   become: yes
   
-- name: Ensuring ceph.conf exist
-  file:
-    path: "{{ nfs_ganesha_ceph_config_dir }}/ceph.conf"
-    state: file
-    mode: "0600"
-  become: yes
+- name: Copying over ceph.conf for nfs-ganesha-ceph
+  merge_configs:
+    sources:
+      - "{{ node_custom_config }}/nfs-ganesha-ceph/ceph.conf"
+      - "{{ node_custom_config }}/ceph.conf"
+    dest: "{{ nfs_ganesha_ceph_config_dir }}/ceph.conf"
+    mode: "0660"
+  become: true
   
 - name: Starting nfs-ganesha-ceph container
   become: true
