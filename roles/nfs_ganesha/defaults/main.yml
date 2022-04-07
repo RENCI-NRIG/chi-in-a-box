@@ -1,0 +1,6 @@
+---
+kolla_ceph_nfs_image: "{{ docker_registry ~ '/' if docker_registry else '' }}{{ docker_namespace }}/{{ kolla_base_distro }}-{{ ceph_install_type }}-ceph-nfs"
+kolla_ceph_nfs_tag: "{{ ceph_tag }}"
+kolla_ceph_nfs_image_full: "{{ ceph_nfs_image }}:{{ ceph_nfs_tag }}"
+
+nfs_ganesha_config_dir: /etc/nfs_ganesha

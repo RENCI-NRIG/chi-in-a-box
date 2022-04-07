@@ -1,0 +1,21 @@
+---
+- name: Ensuring config directories exist
+  file:
+    path: "{{ nfs_ganesha_config_dir }}"
+    state: "directory"
+    mode: "0770"
+  become: true
+
+- name: Copying over config.json files for service
+  template:
+    src: "config.json.j2"
+    dest: "{{ nfs_ganesha_config_dir }}/config.json"
+    mode: "0660"
+  become: true
+
+- name: Copying over ganesha.conf
+  template:
+    src: "ganesha.conf.j2"
+    dest: "{{ nfs_ganesha_config_dir }}/ganesha.conf"
+    mode: "0600"
+  become: true

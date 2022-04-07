@@ -858,3 +858,6 @@ doni
 # OSG
 [osg:children]
 control
+
+[nfs-ganesha:children]
+manila

@@ -1,0 +1,5 @@
+---
+- hosts: nfs-ganesha
+  roles:
+    - role: nfs_ganesha
+      when: enable_nfs_ganesha | bool

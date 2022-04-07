@@ -298,3 +298,7 @@ enable_osg: no
 # usage reporting
 enable_usage_reporting: no
 
+# Manila
+enable_manila: no
+enable_manila_backend_cephfs_nfs: no
+enable_nfs_ganesha: "{{ enable_manila_backend_cephfs_nfs }}"
