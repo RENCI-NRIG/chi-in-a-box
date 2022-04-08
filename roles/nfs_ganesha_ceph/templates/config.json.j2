@@ -1,5 +1,5 @@
 {
-    "command": "systemctl start nfs-ganesha",
+    "command": "/usr/bin/ganesha.nfsd -F -f /etc/ganesha/ganesha.conf",
     "config_files": [
         {
             "source": "{{ container_config_directory }}/ganesha.conf",
