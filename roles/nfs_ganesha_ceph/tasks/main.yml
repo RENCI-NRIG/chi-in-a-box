@@ -1,4 +1,11 @@
 ---
+- name: Pulling nfs-ganesha0ceph image
+  become: yes
+  kolla_docker:
+    action: "pull_image"
+    common_options: "{{ docker_common_options }}"
+    image: "{{ kolla_nfs_ganesha_ceph_image_full }}"
+
 - name: Ensuring config directories exist
   file:
     path: "{{ nfs_ganesha_ceph_config_dir }}"
